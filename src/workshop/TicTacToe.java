@@ -4,6 +4,7 @@ public class TicTacToe {
 
 	static char[] board = new char[10];
 	static char player,computer;
+	private static int playLocation;
 	public static Scanner scanner = new Scanner(System.in);
 	
 	static void createBoard(){
@@ -32,11 +33,23 @@ public class TicTacToe {
 	        System.out.println("|___|___|___|");
 	        System.out.println("| " + board[7] + " | "+ board[8] + " | " + board[9]+ " |");
 	        System.out.println("|___|___|___|");	}
+
+	public static void userMove() {
+		System.out.println("Enter Location 1-9 to Make Move");
+		playLocation = scanner.nextInt();
+		if (playLocation > 0 && playLocation < 10 ) {
+			board[playLocation] = player;
+			showBoard();
+		} else {
+			System.out.println("Invalid Choice");
+		}
+	}
 	public static void main(String[] args) {
 		System.out.println("----- Welcome To The Game Of Tic Tac Toe -----");
 		createBoard();
 		getPlayerChoice();
 		showBoard();
+		userMove();
 	}
 
 }
