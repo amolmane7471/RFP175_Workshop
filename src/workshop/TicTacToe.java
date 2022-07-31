@@ -4,7 +4,8 @@ public class TicTacToe {
 
 	static char[] board = new char[10];
 	static char player,computer;
-	private static int playLocation;
+	static int playLocation;
+	static int tossResult;
 	public static Scanner scanner = new Scanner(System.in);
 	
 	static void createBoard(){
@@ -52,6 +53,18 @@ public class TicTacToe {
 			return false;
 		}
 	}
+
+	public static void checkToss() {
+		double tossResult = 1+Math.floor(Math.random() * 10) % 2;
+		System.out.println("Choose 1 for Heads or 2 for Tails");
+		int coin = scanner.nextInt();
+		if (coin == tossResult) {
+			System.out.println("Player Won The Toss! Player Starts");
+		} else {
+			System.out.println("Computer Won The Toss! Computer Starts");
+		}
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("----- Welcome To The Game Of Tic Tac Toe -----");
 		createBoard();
@@ -60,6 +73,7 @@ public class TicTacToe {
 		userMove();
 		boolean freeSpace=isEmpty();
 		System.out.println("free space or not: "+freeSpace);
+		checkToss();
 	}
 
 }
