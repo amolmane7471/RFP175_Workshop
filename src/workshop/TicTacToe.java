@@ -11,6 +11,7 @@ public class TicTacToe {
 			board[i] = ' ';
 		}
 	}	
+	
 	static void getPlayerChoice() {
 		 System.out.print("select X or O : ");
 		 player = Character.toUpperCase(scanner.next().charAt(0));
@@ -22,10 +23,20 @@ public class TicTacToe {
 		 System.out.println("You have selected : " +player);
 		 System.out.println("Computer's choice is : " +computer);
 	}
+	
+	static void showBoard() {
+		  	System.out.println(" ___________");
+	        System.out.println("| " + board[1] + " | "+ board[2] + " | " + board[3]+ " |");
+	        System.out.println("|___|___|___|");
+	        System.out.println("| " + board[4] + " | "+ board[5] + " | " + board[6]+ " |");
+	        System.out.println("|___|___|___|");
+	        System.out.println("| " + board[7] + " | "+ board[8] + " | " + board[9]+ " |");
+	        System.out.println("|___|___|___|");	}
 	public static void main(String[] args) {
 		System.out.println("----- Welcome To The Game Of Tic Tac Toe -----");
 		createBoard();
 		getPlayerChoice();
+		showBoard();
 	}
 
 }
